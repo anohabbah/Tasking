@@ -3,4 +3,11 @@
     <string name="act_main_title">Tasks</string>
     <string name="act_main_subtitle">Finish them quickly today.</string>
     <string name="act_main_no_more_tasks">No more tasks</string>
+    <string name="act_create_task_title">Add new task</string>
+    <string name="act_create_task_title_label">Task Title</string>
+    <string name="act_create_task_title_hint">What you do ?</string>
+    <string name="act_create_task_description_label">Task Description</string>
+    <string name="act_create_task_description_hint">A short description</string>
+    <string name="act_create_task_date_label">Task Achievement Date</string>
+    <string name="act_create_task_date_hint">When do you want this task to complete</string>
 </resources>

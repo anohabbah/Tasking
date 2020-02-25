@@ -6,9 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.act_main_tasks_list)
     RecyclerView tasksListView;
 
+    @BindView(R.id.act_main_btn_add)
+    Button btnAddTask;
+
     private DatabaseReference db;
     private List<Task> tasks;
     private TaskAdapter taskAdapter;
@@ -51,12 +57,13 @@ public class MainActivity extends AppCompatActivity {
         txtTitle.setTypeface(MMedium);
         txtNoMore.setTypeface(MLight);
         txtSubtitle.setTypeface(MLight);
+        btnAddTask.setTypeface(MLight);
 
         tasksListView.setLayoutManager(new LinearLayoutManager(this));
         tasks = new ArrayList<>();
 
         // fetch data
-        db = FirebaseDatabase.getInstance().getReference().child("DBTask");
+        db = FirebaseDatabase.getInstance().getReference().child("tasks");
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -73,5 +80,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    @OnClick(R.id.act_main_btn_add)
+    public void startCreateActivity() {
+        startActivity(new Intent(this, CreateTaskActivity.class));
     }
 }
