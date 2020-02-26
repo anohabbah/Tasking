@@ -1,6 +1,9 @@
 package abbah.anoh.android.tasking;
 
+import java.sql.Struct;
+
 public class Task {
+    private String id;
     private String title;
     private String description;
     private String date;
@@ -35,5 +38,13 @@ public class Task {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

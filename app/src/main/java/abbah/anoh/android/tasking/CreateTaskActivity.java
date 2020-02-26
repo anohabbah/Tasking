@@ -74,7 +74,7 @@ public class CreateTaskActivity extends AppCompatActivity {
         String date = edtDate.getText().toString();
 
         DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("tasks");
-        db.setValue(new Task(title, description, date));
+        db.push().setValue(new Task(title, description, date));
 
         startActivity(new Intent(this, MainActivity.class));
     }
