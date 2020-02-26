@@ -57,7 +57,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/act_create_task_edt_description"
+                android:id="@+id/act_create_task_edt_title"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/bg_task_input"
@@ -85,7 +85,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/act_create_task_edt_title"
+                android:id="@+id/act_create_task_edt_description"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/bg_task_input"

@@ -1,14 +1,13 @@
 package abbah.anoh.android.tasking;
 
-import java.sql.Struct;
-
 public class Task {
     private String id;
     private String title;
     private String description;
     private String date;
 
-    public Task() {}
+    public Task() {
+    }
 
     public Task(String title, String description, String date) {
         this.title = title;
